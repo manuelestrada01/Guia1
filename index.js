@@ -39,6 +39,7 @@ let NumDup = []
     
 let dobles = Numeros.map(Element => Element * 2)
     console.log(NumDup)
+    console.log(dobles)
 
 
 //2.C
@@ -49,7 +50,7 @@ let colores2 = ["violeta", "verde"]
 let todos = colores.concat(colores2)
 console.log(todos)
 
-//1
+//1.A
 
 let Libro = {
     titulo: "mi libro luna de pluton",
@@ -61,13 +62,11 @@ console.log(Libro)
 console.table(Libro)
 
 //1.B
-
 Persona.hobby = "airsoft"
 Persona.edad = 27
 console.log(Persona)
 
 //1.C
-
 let Calculadora = {
     suma: function (x,y){
         return x + y
@@ -102,9 +101,73 @@ function frase (nombrePro, precio){
 console.log(frase(Producto.nombrePro, Producto.precio))
 
 //2.C
-
 let ERROR = {
     nombre: "caca",
     desc: "mucho texto"
 }
 console.log(`Nombre Error: ${ERROR.nombre}, desc: ${ERROR.desc}`)
+
+//3.A
+function saludar(nombre) {
+    return "Hola, " + nombre + "!";
+  }
+  console.log(saludar)
+
+const saludarArrow = (nombre) => "Hola, " + nombre + "!";
+console.log(saludarArrow(nombre))
+
+//3.B
+const num = 4;
+let cuadrado = (num) => num * num;
+console.log(cuadrado(num))
+
+//3.C
+const val1 = 10
+const val2 = 8
+
+let mayor = (val1, val2) => val1 > val2 ? val1 : val2
+console.log(mayor(val1, val2))
+
+//4.A
+let pares = Numeros.filter(num => num % 2 === 0)
+console.log(pares)
+
+//4.B
+const estudiante = {
+    nombre: "martin",
+    calificacion: 6
+}
+
+const estudiante2 = {
+    nombre: "alejandro",
+    calificacion: 3
+}
+let listaEstudiantes = [estudiante, estudiante2]
+let nuevoArray = listaEstudiantes.map(Element => Element.nombre)
+
+console.log(nuevoArray)
+
+//4.C
+const total = Numeros.reduce((acumulador, valorActual) => acumulador + valorActual)
+console.log(total)
+
+//5.A
+const sumarTodos = (...numeros) => {
+    return numeros.reduce((acumulador, actual) => acumulador + actual, 0);
+};
+console.log(sumarTodos(2,6,4,6))
+
+//5.C
+let objeto1 ={
+    nombre : "juan",
+    edad : 25
+    }
+let objeto2 = {
+        nombre : "nico",
+        edad : 33
+    }
+const  juntarObjetos = function(...elem){
+        return objetosJuntos = elem
+    }
+
+console.log(juntarObjetos(objeto1, objeto2))
