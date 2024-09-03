@@ -170,4 +170,59 @@ const  juntarObjetos = function(...elem){
         return objetosJuntos = elem
     }
 
-console.log(juntarObjetos(objeto1, objeto2))
+
+
+
+
+
+//GUIA ASINCRONISMO
+
+//VIAJE
+const preparativos = [
+    {requisitos: "documentos al día", valor: true},
+    {requisitos: "reservas de hotel", valor: false},
+    {requisitos: "transporte confirmado", valor: true},
+    {requisitos: "seguro de viaje", valor: true},
+    {requisitos: "dinero", valor: false}
+    ]
+
+//2
+function listoParaViajar(preparativos){
+
+    let lis = preparativos.filter(requisitos => requisitos.valor === false)
+    .map(preparativo => preparativo.requisitos)
+    .join()
+    return lis
+}
+console.log(listoParaViajar(preparativos))
+
+
+//3
+preparativos.push({requisitos: "vacunas necesarias", valor: true})
+
+
+
+//4
+let pos = preparativos.findIndex(preparativos => preparativos.requisitos === "seguro de viaje")
+preparativos.splice(pos, 1)
+
+
+
+
+//5
+let req = preparativos.find(preparativos => preparativos.requisitos === "transporte confirmado")
+
+if(req){
+    req.valor = false
+}
+
+preparativos.forEach(preparativo => {
+    console.log(preparativo);
+});
+
+
+//6
+console.log(listoParaViajar(preparativos))
+
+
+//7
